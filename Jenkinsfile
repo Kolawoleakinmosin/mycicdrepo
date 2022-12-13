@@ -10,6 +10,14 @@ pipeline {
       sh 'mvn clean install -f MyWebApp/pom.xml'
       }
     }
+      stage("Quality Gate") {
+        step {
+        timeout(time: 1, unit: 'HOURS') {
+            waitForQualityGate abortPipeline: true
+        }
+        }
+      }
+          
     stage ('Code Quality') {
       steps {
         withSonarQubeEnv('SonarQube') {
