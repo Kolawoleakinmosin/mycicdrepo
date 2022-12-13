@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<title>MyWebApp</MyWebApp>
 <head>
 </head>
 <body>
